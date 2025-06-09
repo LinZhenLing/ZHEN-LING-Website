@@ -1,19 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Untitled</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>真伶的履歷頁面</title>
+    <title>個人履歷頁面</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -73,7 +63,7 @@
                         <p>輔諮志工隊副隊長、夏令營總召</p>
                         <strong>111學年度</strong>
                         <p>學生議會活動辦理組秘書</p>
-                    </div>          
+                    </div>         
                 </div>
             </div>
             <div class="resume-block">
@@ -137,7 +127,7 @@
                         <img src="https://scontent.fkhh4-1.fna.fbcdn.net/v/t39.30808-6/505672971_2608406302823670_6775506096514131472_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=7lj8YQpp3BgQ7kNvwG3KL60&_nc_oc=AdnxDLJ5JxOwnCHKvz-Wpq8b2SOBzdIHTq-y2JjG6hf11G37rVGxvBwI8ClWe6VaNMP06dQmYTGAdhohN22PUDKY&_nc_zt=23&_nc_ht=scontent.fkhh4-1.fna&_nc_gid=HxXEncldbEJc2kgPHSJMgg&oh=00_AfMDlEUAC6D9XSC5ZG-giZc-Og6_06niolvbTK6YTBnE6g&oe=684C1E20" alt="音樂節海報" class="skill-image" />
                     </div>
                 </li>
-                 
+                    
             </ul>
         </div>
         <div class="skill-category">
@@ -148,7 +138,7 @@
                     <strong>🟢宿舍聖誕節抽獎活動🟢</strong>
                     <br />負責活動整體策劃與執行，包括抽獎設計、獎品準備、海報製作、現場流程掌控與活動主持，成功營造出溫馨歡樂的宿舍節慶氛圍。
                     <div class="image-embed-container">
-                        <img src="https://scontent.fkhh4-1.fna.fbcdn.net/v/t39.30808-6/501280298_2608418066155827_2129442955505145152_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kc51JCMVGS8Q7kNvwEbxRT4&_nc_oc=AdkVXHMUuJlg53XvhL0uLgyCH-P9ZAHmymQ7M1B-H1W6SXQJROVsQNjHTbqJIGB_Z_ZZbhmKTJz9kv2WLds6txL9&_nc_zt=23&_nc_ht=scontent.fkhh4-1.fna&_nc_gid=gH6ozIQrHdLQsH9ZjeNuhA&oh=00_AfPQuU-3GOgLNwPD0fR-ZkhqwP9Lxnr2mkGVsdmHpZPReA&oe=684C2748" alt="宿舍聖誕節抽獎活動照片" class="skill-image-event" />
+                        <img src="https://scontent.fkhh4-1.fna.fbcdn.net/v/t39.30808-6/501280298_2608418066155827_2129442955505145152_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kc51JCMVGS8Q7kNvwEbxRT4&_nc_oc=AdkVXHMUuJlg53XvhL0uLgyCH-P9ZAHmymQ7M1B-H1W6SXQJROVsQNjHTbqJIGB_Z_ZZbhmKTJz9kv2WLds6txL9&_nc_zt=23&_nc_ht=scontent.fkhh4-1.fna&_nc_gid=gH6ozIQrHdLQsH9ZjeNuhA&oh=00_AfPQuU-3GOgLNwPD0fR-ZkhqwP9Lxnr2mkGVsdHpvZPReA&oe=684C2748" alt="宿舍聖誕節抽獎活動照片" class="skill-image-event" />
                     </div>
                 </li>
             </ul>
@@ -205,9 +195,24 @@
         </div>
     </div>
 
-</body>
-</html>
-<!-- partial -->
-  
+    <button type="button" id="BackTop" class="toTop-arrow"></button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script>
+    $(function(){
+        $('#BackTop').click(function(){
+            $('html,body').animate({scrollTop:0}, 333);
+        });
+        $(window).scroll(function() {
+            if ( $(this).scrollTop() > 300 ){
+                $('#BackTop').fadeIn(222);
+            } else {
+                $('#BackTop').stop().fadeOut(222);
+            }
+        }).scroll(); // 立即執行一次 scroll 函式，以檢查初始位置
+    });
+    </script>
+
 </body>
 </html>

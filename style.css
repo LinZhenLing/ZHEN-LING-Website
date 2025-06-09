@@ -76,7 +76,7 @@ body {
 
 .motto {
   font-size: 1.2em;
-  color: #040405 ;
+  color: #040405;
   margin-bottom: var(--spacing-md);
   text-align: center;
   font-weight: 200;
@@ -428,6 +428,8 @@ body {
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
+  /* 添加這一行來置中 .project-link.news-project */
+  text-align: center; 
 }
 
 .project-item:hover {
@@ -462,8 +464,7 @@ body {
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 4px;
-  margin: 0 var(--spacing-md) var(--spacing-md);
-  text-align: center;
+  margin: 0 auto var(--spacing-md) auto; /* 使用 auto 來置中 inline-block */
   transition: background 0.3s ease;
 }
 
@@ -582,4 +583,95 @@ body {
   .contact-item {
     max-width: 100%;
   }
+}
+
+/* --- 回到頂端按鈕樣式 --- */
+#BackTop {
+  /* 尺寸 */
+  width: 50px; /* 2.5rem * 16px/rem = 40px，這裡設為50px更明顯 */
+  height: 50px;
+  padding: 0;
+  margin: 0;
+  border: none; /* 無邊框 */
+  outline: none; /* 無外框 */
+  border-radius: 50%; /* 圓形按鈕 */
+  opacity: 0.9; /* 預設透明度 */
+  
+  /* 位置 */
+  position: fixed;
+  right: 1.5rem; /* 距離右側 1.5rem */
+  bottom: 1.5rem; /* 距離底部 1.5rem */
+  z-index: 999; /* 確保按鈕在其他內容之上 */
+  display: none; /* 預設隱藏，由 jQuery 控制顯示 */
+
+  /* 視覺 */
+  background-color: var(--primary-color); /* 使用變數設定按鈕背景色 */
+  cursor: pointer;
+  box-shadow: var(--box-shadow-medium); /* 使用中等陰影 */
+  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.3s ease; /* 添加過渡效果 */
+}
+
+/* --- 回到頂端按鈕樣式 --- */
+#BackTop {
+  /* 尺寸 */
+  width: 50px; /* 寬度設為 50px */
+  height: 50px; /* 高度設為 50px，確保是正方形 */
+  padding: 0;
+  margin: 0;
+  border: none; /* 移除邊框 */
+  outline: none; /* 移除點擊時的外框 */
+  border-radius: 50%; /* 完美圓形 */
+  opacity: 0.9; /* 預設透明度，比 0.6 更顯眼 */
+  
+  /* 位置 */
+  position: fixed;
+  right: var(--spacing-md); /* 使用變數，距離右側 24px */
+  bottom: var(--spacing-md); /* 使用變數，距離底部 24px */
+  z-index: 999; /* 確保按鈕在其他內容之上 */
+  display: none; /* 預設隱藏，由 JavaScript 或 jQuery 控制顯示與隱藏 */
+
+  /* 視覺 */
+  background-color: var(--primary-color); /* 使用您的主要藍色作為背景色 */
+  cursor: pointer;
+  box-shadow: var(--box-shadow-medium); /* 使用較柔和的中等陰影 */
+  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.3s ease; /* 添加平滑過渡效果 */
+  display: flex; /* 確保偽元素箭頭可以置中 */
+  align-items: center; /* 垂直置中 */
+  justify-content: center; /* 水平置中 */
+}
+
+/* 箭頭樣式 (使用偽元素) */
+#BackTop::before, 
+#BackTop::after {
+  content: ""; /* 偽元素必須有 content 屬性 */
+  width: 16px; /* 箭頭寬度 */
+  height: 4px; /* 箭頭厚度 */
+  border-radius: 2px; /* 箭頭末端圓角 */
+  background: white; /* 箭頭顏色設為白色，與藍色背景形成對比 */
+  position: absolute;
+  top: 50%; /* 垂直置中基礎點 */
+  left: 50%; /* 水平置中基礎點 */
+  transform-origin: center; /* 旋轉中心點在元素中心 */
+  transition: transform 0.2s ease; /* 箭頭本身的過渡效果 */
+}
+
+#BackTop::before {
+  transform: translate(-50%, -50%) rotate(-45deg) translateX(-4px); /* 向上箭頭左半邊，調整位置使其會合 */
+}
+
+#BackTop::after {
+  transform: translate(-50%, -50%) rotate(45deg) translateX(4px); /* 向上箭頭右半邊，調整位置使其會合 */
+}
+
+/* 懸停效果 */
+#BackTop:hover {
+  opacity: 1; /* 懸停時完全不透明 */
+  background-color: #3A7AD5; /* 懸停時顏色稍變深 */
+  transform: translateY(-5px); /* 懸停時向上輕微移動 */
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15); /* 懸停時陰影更明顯 */
+}
+
+/* 確保點擊後沒有惱人的虛線框 */
+#BackTop:focus {
+  outline: none;
 }
